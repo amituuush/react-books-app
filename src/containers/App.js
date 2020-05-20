@@ -1,14 +1,10 @@
 import React from 'react'
+import Add from '../components/Add'
 
 const App = () => (
   <div class="wrapper">
 
-    <div className="add">
-      <input type="text" placeholder="Title" />
-      <input type="number" placeholder="Cost" />
-      <input type="number" placeholder="Quantity" />
-      <button>+</button>
-    </div>
+    <Add />
 
     <div className="headers">
       <span>Title</span>
