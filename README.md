@@ -18,6 +18,6 @@ You will also see any lint errors in the console.
 
 
 # Task
-1. Style the app according to the design in design.ai file. Try your best to make it responsive.
+1. Style the app according to the design in design.ai file. Try your best to make it responsive. Feel free to change any class names, move around HTML etc.
 2. The functionality of the app should be similar to the example here: http://nailasulaiman.github.io/angular-books-app
    The input fields should add a book row to the table, and the totals for quantity and cost should be updated accordingly.
