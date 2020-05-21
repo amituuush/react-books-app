@@ -1,10 +1,15 @@
-import React from 'react'
-import Add from '../components/Add'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import Add from '../components/Add';
+import BookList from '../components/BookList';
+import BookForm from '../components/BookForm';
 
 const App = () => (
-  <div class="wrapper">
-
-    <Add />
+  <div className="wrapper">
+    <h1>Innovations for Learning Books</h1>
+    <BookForm />
 
     <div className="headers">
       <span>Title</span>
@@ -12,27 +17,19 @@ const App = () => (
       <span>Quantity</span>
     </div>
 
-    <div className="books">
-      <div className="book">
-        <span>Tom Sawyer</span>
-        <span>$10</span>
-        <span>2</span>
-        <button>-</button>
-      </div>
-      <div className="book">
-        <span>The Old Man and the Sea</span>
-        <span>$5</span>
-        <span>1</span>
-        <button>-</button>
-      </div>
-    </div>
+    <BookList />
 
     <div className="totals">
       <span>$25</span>
       <span>3</span>
     </div>
-
   </div>
-)
+);
 
-export default App
+// const mapStateToProps = (state) => ({
+//   books: state.books,
+// });
+
+// export default connect(mapStateToProps, { addBook })(App);
+
+export default App;
