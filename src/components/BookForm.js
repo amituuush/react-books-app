@@ -67,10 +67,4 @@ BookForm.propTypes = {
   addBook: PropTypes.func.isRequired,
 };
 
-// const mapStateToProps = (state) => {
-//   return {
-//     books: state.books,
-//   };
-// };
-
 export default connect(null, { addBook })(BookForm);
