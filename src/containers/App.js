@@ -8,20 +8,13 @@ import BookForm from '../components/BookForm';
 
 const App = () => (
   <div className="wrapper">
-    <h1>Innovations for Learning Books</h1>
-    <BookForm />
-
-    <div className="headers">
-      <span>Title</span>
-      <span>Cost</span>
-      <span>Quantity</span>
+    <div className="cover">
+      <h1>Innovations for Learning Books</h1>
     </div>
 
-    <BookList />
-
-    <div className="totals">
-      <span>$25</span>
-      <span>3</span>
+    <div className="book-container">
+      <BookForm />
+      <BookList />
     </div>
   </div>
 );

@@ -28,37 +28,44 @@ class BookForm extends Component {
 
     this.props.addBook({
       title: this.state.title,
-      cost: this.state.cost,
-      quantity: this.state.quantity,
+      cost: parseInt(this.state.cost),
+      quantity: parseInt(this.state.quantity),
     });
   }
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit} className="add">
-        <input
-          type="text"
-          value={this.state.title}
-          onChange={this.handleFormChange}
-          name="title"
-          placeholder="Title"
-        />
-        <input
-          type="number"
-          value={this.state.cost}
-          onChange={this.handleFormChange}
-          name="cost"
-          placeholder="Cost"
-        />
-        <input
-          type="number"
-          value={this.state.quantity}
-          onChange={this.handleFormChange}
-          name="quantity"
-          placeholder="Quantity"
-        />
-        <button>+</button>
-      </form>
+      <div className="book-form">
+        <form onSubmit={this.handleFormSubmit}>
+          <div className="book-form-input-container">
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.handleFormChange}
+              name="title"
+              placeholder="Title"
+              className="input-title"
+            />
+            <input
+              type="number"
+              value={this.state.cost}
+              onChange={this.handleFormChange}
+              name="cost"
+              placeholder="Cost"
+              className="input-cost"
+            />
+            <input
+              type="number"
+              value={this.state.quantity}
+              onChange={this.handleFormChange}
+              name="quantity"
+              placeholder="Quantity"
+              className="input-quantity"
+            />
+          </div>
+          <button>+</button>
+        </form>
+      </div>
     );
   }
 }

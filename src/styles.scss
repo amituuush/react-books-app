@@ -1,5 +1,221 @@
 @import 'scss/variables';
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 50px;
+  background-color: $bg-yellow;
+  background-image: url("./assets/background_full.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cover {
+  max-width: 600px;
+  height: 150px;
+  margin: 0 auto;
+  background-image: url("./assets/clouds.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    padding-top: 88px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    text-align: left;
+
+    @media screen and (min-width: $desktop-width) {
+      text-align: center;
+    }
+  }
+}
+
+.wrapper {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+
+  .book-container {
+    max-width: 600px;
+    padding: 30px;
+    margin: 0 auto 30px auto;
+    box-sizing: border-box;
+  }
+
+  .headers-text, .totals-text {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .book-form {
+    margin-bottom: 25px;
+
+    .book-form-input-container {
+      display: flex;
+    }
+
+    .book-form-input-container > * {
+      min-width: 0;
+    }
+
+    input {
+      background-color: #DEDEDE;
+      border: none;
+      border-radius: 3px;
+      padding: 6px 0 6px 8px;
+      font-size: 13px;
+    }
+
+    .input-title, .input-cost, .input-quantity {
+      margin-bottom: 12px;
+    }
+
+    .input-title {
+      flex-grow: 4;
+    }
+
+    .input-quantity {
+      float: right;
+    }
+
+    .input-cost, .input-quantity {
+      flex-grow: 2
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: $add-button-bg;
+      color: $white;
+      border: none;
+      border-radius: 3px;
+      padding: 7px;
+    }
+  }
+
+  .book-container {
+    background-color: $white;
+
+    .book-table {
+      width: 100%;
+    }
+
+    .book-table-button-container-mobile {
+      float: right;
+
+      .book-table-button {
+        float: right;
+        padding: 9px 14px;
+      }
+    }
+
+    .book-table-row-mobile {
+      margin-bottom: 20px;
+    }
+
+    .book-table-td-container {
+      display: inline-block
+    }
+
+    .book-table-button-container-mobile {
+      display: inline-block;
+    }
+  }
+
+  .book-table-td {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .book-table-button {
+    background: $remove-button-bg;
+    border: none;
+    color: $white;
+    border-radius: 3px;
+  }
+
+  .book-totals {
+    position: relative;
+    width: 85%;
+    height: 16px;
+    right: 50px;
+    padding: 6px 95px;
+    border-radius: 3px;
+    background: black;
+    color: white;
+    opacity: 0.8;
+  }
+
+  .book-totals-cost, .book-totals-quantity {
+    display: inline-block;
+  }
+
+  .book-totals-cost {
+    float: left;
+  }
+
+  .book-totals-quantity {
+    float: right;
+  }
+}
+
+.mobile-only {
+  @media screen and (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @media screen and (min-width: $desktop-width) {
+    display: initial;
+  }
+}
+
+// CSS RESET
+// http://meyerweb.com/eric/tools/css/reset/
+//  v2.0 | 20110126
+//  License: none (public domain)
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 body {
-  background-color: $bg;
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
