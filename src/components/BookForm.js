@@ -62,8 +62,8 @@ class BookForm extends Component {
               placeholder="Quantity"
               className="input-quantity"
             />
+            <button>+</button>
           </div>
-          <button>+</button>
         </form>
       </div>
     );
