@@ -66,7 +66,7 @@ const mapStateToProps = (state) => {
 
 BookTable.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string,
     cost: PropTypes.number,
     quantity: PropTypes.number
