@@ -121,21 +121,31 @@
 
 .book-table {
   width: 100%;
+}
 
-  .book-table-header {
-    position: absolute;
-    max-width: 593px;
-    padding: 9px 50px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    background: black;
-    color: $white;
-    opacity: $header-and-total-bar-opacity;
-    text-transform: uppercase;
-  }
+.book-table-header,
+.book-totals {
+  position: absolute;
+  width: 68%;
+  max-width: $header-and-total-max-width;
+  margin: 0 auto;
+  padding: 9px 55px;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+  background: black;
+  color: $white;
+  opacity: $header-and-total-bar-opacity;
+}
+
+.book-table-header {
+  text-transform: uppercase;
+}
+
+.book-totals {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .book-table-headers-text,
@@ -162,41 +172,6 @@
   text-align: center;
 }
 
-@media screen and (min-width: $desktop-width) {
-  .book-table-row-container {
-    padding: 50px 0 45px;
-  }
-  .book-table-td {
-    display: inline-block;
-  }
-
-  .book-table-td-id,
-  .book-table-headers-id {
-    width: 10%;
-  }
-  .book-table-td-title,
-  .book-table-headers-title {
-    width: 30%;
-  }
-  .book-table-td-cost {
-    width: 30%;
-  }
-  .book-table-td-quantity,
-  .book-table-headers-quantity {
-    width: 20%;
-  }
-
-  .book-table-headers-cost {
-    width: 24%;
-  }
-
-  .book-table-button {
-    float: initial;
-    position: initial;
-    bottom: 0;
-  }
-}
-
 .book-table-button {
   padding: 8px 14px;
   background: $remove-button-bg;
@@ -212,49 +187,48 @@
   }
 }
 
-.book-totals {
-  position: absolute;
-  width: 65%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  padding: 9px 45px;
-  border-radius: 3px;
-  background: black;
-  color: $white;
-  font-size: 20px;
-  font-weight: 700;
-  opacity: $header-and-total-bar-opacity;
-}
-
 .book-totals-cost,
 .book-totals-quantity {
   display: inline-block;
+}
+
+.book-totals-quantity {
+  width: 48%;
+  text-align: right;
 }
 
 .book-totals-cost {
   width: 50%;
 }
 
-.book-totals-quantity {
-  width: 50%;
-  text-align: right;
-}
-
 @media screen and (min-width: $desktop-width) {
-  .book-totals {
-    max-width: 550px;
-    padding: 9px 70px;
+  .book-table-td-quantity {
+    padding-left: 20px;
   }
 
-  .book-totals-cost {
-    width: 43%;
-    text-align: right;
+  .book-table-row-container {
+    padding: 50px 0 45px;
+  }
+
+  .book-table-row {
+    display: grid;
+    grid-template-columns: $grid-col-1-width $grid-col-2-width $grid-col-3-width $grid-col-4-width $grid-col-5-width;
+  }
+
+  .book-table-header {
+    display: grid;
+    grid-template-columns: $grid-col-1-width $grid-col-2-width $grid-col-3-width $grid-col-4-width $grid-col-5-width;
+  }
+
+  .book-totals {
+    display: grid;
+    grid-template-columns: $grid-col-1-width $grid-col-2-width $grid-col-3-width $grid-col-4-width $grid-col-5-width;
   }
 
   .book-totals-quantity {
-    width: 30.5%;
-    text-align: right;
+    width: initial;
+    padding-left: 20px;
+    text-align: left;
   }
 }
 

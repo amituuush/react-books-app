@@ -14,7 +14,9 @@ class BookTable extends Component {
           <div className="book-table-td book-table-td-title">{book.title}</div>
           <div className="book-table-td book-table-td-cost">${book.cost}</div>
           <div className="book-table-td book-table-td-quantity">{book.quantity}</div>
-          <button className="book-table-button" onClick={() => this.removeBook(book.id)}>-</button>
+          <div className="book-table-button-container">
+            <button className="book-table-button" onClick={() => this.removeBook(book.id)}>-</button>
+          </div>
         </div>
       );
     });
@@ -38,6 +40,7 @@ class BookTable extends Component {
           <div className="book-table-headers-text book-table-headers-title">Title</div>
           <div className="book-table-headers-text book-table-headers-cost">Cost</div>
           <div className="book-table-headers-text book-table-headers-quantity">Quantity</div>
+          <div></div>
         </div>
         <div className="book-table-row-container">{this.renderBookList()}</div>
         {
@@ -45,8 +48,11 @@ class BookTable extends Component {
             <div className="book-table-placeholder desktop-only">Use the form above to add a book to the list!</div>
           ) : (
               <div className={this.props.books.length === 0 ? "book-totals hidden" : "book-totals"}>
+                <div></div>
+                <div></div>
                 <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
                 <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
+                <div></div>
               </div>
             )
         }
