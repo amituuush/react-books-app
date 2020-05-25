@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { removeBook } from '../actions/index';
+import pencilImg from '../assets/pencils.svg';
 
-class BookList extends Component {
+class BookTable extends Component {
   renderBookList() {
     return this.props.books.map((book) => {
       return (
@@ -20,11 +21,9 @@ class BookList extends Component {
   }
 
   calculateTotal(type) {
-    let sum = this.props.books.reduce(function (acc, currentVal) {
+    return this.props.books.reduce(function (acc, currentVal) {
       return acc + currentVal[type];
     }, 0);
-
-    return sum;
   }
 
   removeBook(id) {
@@ -41,10 +40,11 @@ class BookList extends Component {
           <div className="book-table-headers-text book-table-headers-quantity">Quantity</div>
         </div>
         <div className="book-table-row-container">{this.renderBookList()}</div>
-        <div className={this.props.books.length == 0 ? "book-totals hidden" : "book-totals"}>
+        <div className={this.props.books.length === 0 ? "book-totals hidden" : "book-totals"}>
           <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
           <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
         </div>
+        <img src={pencilImg} className="pencil-img desktop-only" alt="pencils" />
       </div>
     );
   }
@@ -56,9 +56,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-BookList.propTypes = {
-  // books: fill this in
+BookTable.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    cost: PropTypes.number,
+    quantity: PropTypes.number
+  })),
   removeBook: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, { removeBook })(BookList);
+export default connect(mapStateToProps, { removeBook })(BookTable);

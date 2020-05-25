@@ -24,5 +24,3 @@ export const removeBook = (id) => {
     },
   };
 };
-
-// refactor below to use shorthand?

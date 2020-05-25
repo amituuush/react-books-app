@@ -1,12 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
-import Add from '../components/Add';
-import BookList from '../components/BookList';
+import BookTable from '../components/BookTable';
 import BookForm from '../components/BookForm';
-
-import pencilImg from '../assets/pencils.svg';
 
 const App = () => (
   <div className="wrapper">
@@ -16,16 +11,9 @@ const App = () => (
 
     <div className="book-container">
       <BookForm />
-      <BookList />
+      <BookTable />
     </div>
-    <img src={pencilImg} className="pencil-img desktop-only" alt="pencils" />
   </div>
 );
-
-// const mapStateToProps = (state) => ({
-//   books: state.books,
-// });
-
-// export default connect(mapStateToProps, { addBook })(App);
 
 export default App;

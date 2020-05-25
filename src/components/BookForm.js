@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import { addBook } from '../actions/index';
 
 class BookForm extends Component {
@@ -44,7 +45,7 @@ class BookForm extends Component {
               onChange={this.handleFormChange}
               name="title"
               placeholder="Title"
-              className="input-title"
+              className="input-title book-form-input"
             />
             <input
               type="number"
@@ -52,7 +53,7 @@ class BookForm extends Component {
               onChange={this.handleFormChange}
               name="cost"
               placeholder="Cost"
-              className="input-cost"
+              className="input-cost book-form-input"
             />
             <input
               type="number"
@@ -60,9 +61,9 @@ class BookForm extends Component {
               onChange={this.handleFormChange}
               name="quantity"
               placeholder="Quantity"
-              className="input-quantity"
+              className="input-quantity book-form-input"
             />
-            <button>+</button>
+            <button className="book-form-button">+</button>
           </div>
         </form>
       </div>

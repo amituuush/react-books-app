@@ -17,12 +17,12 @@
 }
 
 .cover {
-  max-width: 650px;
+  max-width: $container-width;
   height: 150px;
   margin: 0 auto;
   background-image: url("./assets/clouds.svg");
   background-repeat: no-repeat;
-  background-size: 650px;
+  background-size: $container-width;
   background-position: 100% 0;
 
   h1 {
@@ -40,7 +40,7 @@
 }
 
 .book-container {
-  max-width: 650px;
+  max-width: $container-width;
   padding: 30px 30px 70px;
   margin: 0 auto 30px auto;
   box-sizing: border-box;
@@ -60,13 +60,6 @@
   flex-direction: row;
   flex-wrap: wrap;
 
-  .input-title,
-  .input-cost,
-  .input-quantity {
-    margin-bottom: 12px;
-    padding-left: 3%;
-  }
-
   .input-cost,
   .input-quantity {
     width: 44%;
@@ -80,18 +73,19 @@
     margin-right: 6%;
   }
 
-  input {
+  .book-form-input {
+    margin-bottom: 12px;
+    padding: 9px 0 9px 3%;
     background-color: #dedede;
     border: none;
     border-radius: 3px;
-    padding: 9px 0;
     font-size: 13px;
   }
 
-  button {
+  .book-form-button {
     display: block;
     width: 100%;
-    padding: 5px 0 7px;
+    padding: 7px 0;
     background-color: $add-button-bg;
     color: $white;
     border: none;
@@ -117,9 +111,9 @@
       width: 30%;
     }
 
-    button {
+    .book-form-button {
       width: 32px;
-      height: 28px;
+      height: 31px;
     }
   }
 }
@@ -134,24 +128,12 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    // width: 65%;
     border-radius: 3px;
     margin-bottom: 15px;
-    // padding: 9px 47px 6px;
     background: black;
     color: #fff;
     opacity: 0.8;
     text-transform: uppercase;
-
-    // left: 0;
-    // right: 0;
-    // padding: 9px 45px;
-    // border-radius: 3px;
-    // background: black;
-    // color: white;
-    // font-size: 20px;
-    // font-weight: 700;
-    // opacity: 0.8;
   }
 }
 
@@ -220,7 +202,7 @@
   border: none;
   border-radius: 3px;
 
-  @media screen and (max-width: $desktop-width - 1px) {
+  @media screen and (max-width: $mobile-width) {
     position: relative;
     bottom: 40px;
     float: right;
@@ -252,8 +234,8 @@
 }
 
 .book-totals-quantity {
-  text-align: right;
   width: 43%;
+  text-align: right;
 }
 
 @media screen and (min-width: $desktop-width) {
@@ -275,8 +257,9 @@
 
 .pencil-img {
   position: relative;
-  width: 300px;
-  bottom: 150px;
+  bottom: 48px;
+  width: 284px;
+  right: 110px;
 }
 
 .mobile-only {
