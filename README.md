@@ -1,4 +1,4 @@
-# React Books App Template
+# React Books App Project
 
 Thanks for taking time to look at my project!
 
