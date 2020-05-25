@@ -273,6 +273,12 @@
   }
 }
 
+.pencil-img {
+  position: relative;
+  width: 300px;
+  bottom: 150px;
+}
+
 .mobile-only {
   @media screen and (min-width: $desktop-width) {
     display: none;
