@@ -44,7 +44,9 @@ class BookTable extends Component {
           <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
           <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
         </div>
-        <img src={pencilImg} className="pencil-img desktop-only" alt="pencils" />
+        <div className="pencil-img-container">
+          <img src={pencilImg} className="pencil-img desktop-only" alt="pencils" />
+        </div>
       </div>
     );
   }
