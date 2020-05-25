@@ -179,11 +179,14 @@
   font-size: 14px;
   border: none;
   border-radius: 3px;
+  position: relative;
+  bottom: 40px;
+  float: right;
 
-  @media screen and (max-width: $mobile-width) {
-    position: relative;
-    bottom: 40px;
-    float: right;
+  @media screen and (min-width: $mobile-width) {
+    float: initial;
+    bottom: initial;
+    position: initial;
   }
 }
 

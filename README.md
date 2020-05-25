@@ -1,8 +1,6 @@
 # React Books App Template
 
-This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app), which provides a simple way to start React projects with no build configuration needed.
-
-## Development
+Thanks for taking time to look at my project!
 
 In the project directory, run:
 
@@ -11,13 +9,21 @@ In the project directory, run:
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Overview
+* The app has two main components, `<BookForm />` and `<BookTable />`. `BookForm` is given the `addBook` method/action which adds a book to the `books` field in the store. Similarly, `BookTable` is given the `removeBook` method/action, which removes the book from `books` in the store.
+* The dimensions of containers, buttons, forms, and font-sizes of elements are not perfectly matched to the design. Since I wasn't given these values I did my best to visually estimate.
+* Prop types are added for type checking
+* The app is responsive. I took a mobile-first approach when styling the app and used media queries to handle screen sizes larger than 768px (I used `768px` as a general breakpoint to differ between mobile and desktop/tablet)
+     * The form is made with flexbox and the table with css grids.
 
+## Tradeoffs and Considerations
+* I thought about using `redux-form` to manage state in `BookForm`; however, it seemed like overkill given the size and time constraint of the project; hence, I opted to give the `BookForm` component its own internal state.
 
-
-
-# Task
-1. Style the app according to the design in design.ai file. Try your best to make it responsive. Feel free to change any class names, move around HTML etc.
-2. The functionality of the app should be similar to the example here: http://nailasulaiman.github.io/angular-books-app
-   The input fields should add a book row to the table, and the totals for quantity and cost should be updated accordingly.
+## Potential Improvements
+* ability to edit title, cost, quantity for each book
+* validation on form to now allow empty values to be submitted
+* add to and load from localstorage for persistence
+* tests
+* break styles.scss into partials for more modularity
+* handle long title names
+* implement class naming methodology such as BEM, SMACSS, or OOCSS
