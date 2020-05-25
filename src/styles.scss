@@ -30,6 +30,7 @@
     font-family: "Playfair Display", serif;
     font-size: 32px;
     text-align: left;
+    line-height: 1em;
 
     @media screen and (min-width: $desktop-width) {
       text-align: center;
@@ -44,7 +45,7 @@
   padding: 30px 30px 70px;
   margin: 0 auto 30px auto;
   box-sizing: border-box;
-  background-color: #f8f8f8;
+  background-color: $book-container-bg;
 }
 
 .book-form {
@@ -76,7 +77,7 @@
   .book-form-input {
     margin-bottom: 12px;
     padding: 9px 0 9px 3%;
-    background-color: #dedede;
+    background-color: $input-bg;
     border: none;
     border-radius: 3px;
     font-size: 13px;
@@ -131,8 +132,8 @@
     border-radius: 3px;
     margin-bottom: 15px;
     background: black;
-    color: #fff;
-    opacity: 0.8;
+    color: $white;
+    opacity: $header-and-total-bar-opacity;
     text-transform: uppercase;
   }
 }
@@ -146,23 +147,25 @@
   display: inline-block;
 }
 
-.book-table-row-container {
-  @media screen and (min-width: $desktop-width) {
-    padding: 50px 0 45px;
-  }
-}
-
 .book-table-row {
   display: inline-block;
   width: 100%;
   margin-bottom: 5px;
+}
 
-  .book-table-td {
-    font-family: "Lato", sans-serif;
-  }
+.book-table-td,
+.book-table-placeholder {
+  font-family: "Lato", sans-serif;
+}
+
+.book-table-placeholder {
+  text-align: center;
 }
 
 @media screen and (min-width: $desktop-width) {
+  .book-table-row-container {
+    padding: 50px 0 45px;
+  }
   .book-table-td {
     display: inline-block;
   }
@@ -218,10 +221,10 @@
   padding: 9px 45px;
   border-radius: 3px;
   background: black;
-  color: white;
+  color: $white;
   font-size: 20px;
   font-weight: 700;
-  opacity: 0.8;
+  opacity: $header-and-total-bar-opacity;
 }
 
 .book-totals-cost,
@@ -234,7 +237,7 @@
 }
 
 .book-totals-quantity {
-  width: 43%;
+  width: 50%;
   text-align: right;
 }
 

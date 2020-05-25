@@ -6,7 +6,7 @@ import BookForm from '../components/BookForm';
 const App = () => (
   <div className="wrapper">
     <div className="cover">
-      <h1>Innovations for Learning Books</h1>
+      <h1>Innovations <div className="mobile-only"></div> for Learning Books</h1>
     </div>
 
     <div className="book-container">

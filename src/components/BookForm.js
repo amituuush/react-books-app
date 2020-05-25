@@ -32,6 +32,16 @@ class BookForm extends Component {
       cost: parseInt(this.state.cost),
       quantity: parseInt(this.state.quantity),
     });
+
+    this.resetState();
+  }
+
+  resetState() {
+    this.setState({
+      title: '',
+      cost: '',
+      quantity: ''
+    });
   }
 
   render() {

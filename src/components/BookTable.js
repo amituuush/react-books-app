@@ -40,10 +40,16 @@ class BookTable extends Component {
           <div className="book-table-headers-text book-table-headers-quantity">Quantity</div>
         </div>
         <div className="book-table-row-container">{this.renderBookList()}</div>
-        <div className={this.props.books.length === 0 ? "book-totals hidden" : "book-totals"}>
-          <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
-          <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
-        </div>
+        {
+          this.props.books.length === 0 ? (
+            <div className="book-table-placeholder desktop-only">Use the form above to add a book to the list!</div>
+          ) : (
+              <div className={this.props.books.length === 0 ? "book-totals hidden" : "book-totals"}>
+                <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
+                <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
+              </div>
+            )
+        }
         <div className="pencil-img-container">
           <img src={pencilImg} className="pencil-img desktop-only" alt="pencils" />
         </div>
