@@ -5,32 +5,15 @@ import { connect } from 'react-redux';
 import { removeBook } from '../actions/index';
 
 class BookList extends Component {
-  renderBookListDesktop() {
-    return this.props.books.map((book, index) => {
+  renderBookList() {
+    return this.props.books.map((book) => {
       return (
-        <tr className="desktop-only" key={index}>
-          <td className="book-table-td">{book.id}</td>
-          <td className="book-table-td">{book.title}</td>
-          <td className="book-table-td">${book.cost}</td>
-          <td className="book-table-td">{book.quantity}</td>
+        <div className="book-table-row" key={book.id}>
+          <div className="book-table-td book-table-td-id desktop-only">{book.id}</div>
+          <div className="book-table-td book-table-td-title">{book.title}</div>
+          <div className="book-table-td book-table-td-cost">${book.cost}</div>
+          <div className="book-table-td book-table-td-quantity">{book.quantity}</div>
           <button className="book-table-button" onClick={() => this.removeBook(book.id)}>-</button>
-        </tr>
-      );
-    });
-  }
-
-  renderBookListMobile() {
-    return this.props.books.map((book, index) => {
-      return (
-        <div className="book-table-row-mobile mobile-only">
-          <div className="book-table-td-container">
-            <div className="book-table-td">{book.title}</div>
-            <div className="book-table-td">${book.cost}</div>
-            <div className="book-table-td">{book.quantity}</div>
-          </div>
-          <div className="book-table-button-container-mobile">
-            <button className="book-table-button" onClick={() => this.removeBook(book.id)}>-</button>
-          </div>
         </div>
       );
     });
@@ -50,30 +33,17 @@ class BookList extends Component {
 
   render() {
     return (
-      <div>
-        <table className="book-table desktop-only">
-          <thead>
-            <tr className="headers">
-              <th className="headers-text">Title</th>
-              <th className="headers-text">Cost</th>
-              <th className="headers-text">Quantity</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.renderBookListDesktop()}
-            <div className="book-totals">
-              <div className="book-totals-text">${this.calculateTotal("cost")}</div>
-              <div className="book-totals-text">{this.calculateTotal("quantity")}</div>
-            </div>
-          </tbody>
-        </table>
-
-        <div className="mobile-only">
-          {this.renderBookListMobile()}
-          <div className="book-totals">
-            <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
-            <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
-          </div>
+      <div className="book-table">
+        <div className="book-table-header desktop-only">
+          <div className="book-table-headers-text book-table-headers-id">#</div>
+          <div className="book-table-headers-text book-table-headers-title">Title</div>
+          <div className="book-table-headers-text book-table-headers-cost">Cost</div>
+          <div className="book-table-headers-text book-table-headers-quantity">Quantity</div>
+        </div>
+        <div className="book-table-row-container">{this.renderBookList()}</div>
+        <div className={this.props.books.length == 0 ? "book-totals hidden" : "book-totals"}>
+          <div className="book-totals-cost">${this.calculateTotal("cost")}</div>
+          <div className="book-totals-quantity">{this.calculateTotal("quantity")}</div>
         </div>
       </div>
     );

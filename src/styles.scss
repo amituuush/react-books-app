@@ -17,168 +17,260 @@
 }
 
 .cover {
-  max-width: 600px;
+  max-width: 650px;
   height: 150px;
   margin: 0 auto;
   background-image: url("./assets/clouds.svg");
   background-repeat: no-repeat;
-  background-size: 600px;
+  background-size: 650px;
+  background-position: 100% 0;
 
   h1 {
-    padding-top: 88px;
+    padding-top: 35px;
     font-family: "Playfair Display", serif;
     font-size: 32px;
     text-align: left;
 
     @media screen and (min-width: $desktop-width) {
       text-align: center;
+      padding-top: 93px;
+      font-size: 40px;
     }
   }
 }
 
 .book-container {
-  max-width: 600px;
-  padding: 30px;
+  max-width: 650px;
+  padding: 30px 30px 70px;
   margin: 0 auto 30px auto;
   box-sizing: border-box;
   background-color: #f8f8f8;
-
-  .book-table {
-    width: 100%;
-  }
-
-  .book-table-button-container-mobile {
-    float: right;
-
-    .book-table-button {
-      float: right;
-      padding: 9px 14px;
-    }
-  }
-
-  .book-table-row-mobile {
-    margin-bottom: 20px;
-  }
-
-  .book-table-td-container {
-    display: inline-block;
-  }
-
-  .book-table-button-container-mobile {
-    display: inline-block;
-  }
 }
 
 .book-form {
   margin-bottom: 25px;
 
-  .book-form-input-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  @media screen and (min-width: $desktop-width) {
+    margin-bottom: 15px;
+  }
+}
+
+.book-form-input-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .input-title,
+  .input-cost,
+  .input-quantity {
+    margin-bottom: 12px;
+    padding-left: 3%;
+  }
+
+  .input-cost,
+  .input-quantity {
+    width: 44%;
+  }
+
+  .input-title {
+    width: 100%;
+  }
+
+  .input-cost {
+    margin-right: 6%;
+  }
+
+  input {
+    background-color: #dedede;
+    border: none;
+    border-radius: 3px;
+    padding: 9px 0;
+    font-size: 13px;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 5px 0 7px;
+    background-color: $add-button-bg;
+    color: $white;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    padding-left: 57px;
 
     .input-title,
     .input-cost,
     .input-quantity {
-      margin-bottom: 12px;
-      padding-left: 3%;
+      margin-right: 20px;
     }
 
     .input-cost,
     .input-quantity {
-      width: 44%;
+      width: 20%;
     }
 
     .input-title {
-      width: 100%;
-    }
-
-    .input-cost {
-      margin-right: 6%;
-    }
-
-    input {
-      background-color: #dedede;
-      border: none;
-      border-radius: 3px;
-      padding: 6px 0;
-      font-size: 13px;
+      width: 30%;
     }
 
     button {
-      display: block;
-      width: 100%;
-      background-color: $add-button-bg;
-      color: $white;
-      border: none;
-      border-radius: 3px;
-      padding: 7px;
-    }
-
-    @media screen and (min-width: $desktop-width) {
-      .input-title,
-      .input-cost,
-      .input-quantity {
-        margin-right: 20px;
-      }
-
-      .input-cost,
-      .input-quantity {
-        width: 20%;
-      }
-
-      .input-title {
-        width: 30%;
-      }
-
-      button {
-        width: 28px;
-        height: 28px;
-      }
+      width: 32px;
+      height: 28px;
     }
   }
+}
+
+.book-table {
+  width: 100%;
+
+  .book-table-header {
+    position: absolute;
+    max-width: 593px;
+    padding: 9px 50px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    // width: 65%;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    // padding: 9px 47px 6px;
+    background: black;
+    color: #fff;
+    opacity: 0.8;
+    text-transform: uppercase;
+
+    // left: 0;
+    // right: 0;
+    // padding: 9px 45px;
+    // border-radius: 3px;
+    // background: black;
+    // color: white;
+    // font-size: 20px;
+    // font-weight: 700;
+    // opacity: 0.8;
+  }
+}
+
+.book-table-headers-text,
+.totals-text {
+  font-family: "Lato", sans-serif;
+}
+
+.book-table-headers-text {
+  display: inline-block;
+}
+
+.book-table-row-container {
+  @media screen and (min-width: $desktop-width) {
+    padding: 50px 0 45px;
+  }
+}
+
+.book-table-row {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
 
   .book-table-td {
     font-family: "Lato", sans-serif;
   }
+}
 
-  .book-table-button {
-    background: $remove-button-bg;
-    border: none;
-    color: $white;
-    border-radius: 3px;
-  }
-
-  .book-totals {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    padding: 6px 95px;
-    border-radius: 3px;
-    background: black;
-    color: white;
-    opacity: 0.8;
-  }
-
-  .book-totals-cost,
-  .book-totals-quantity {
+@media screen and (min-width: $desktop-width) {
+  .book-table-td {
     display: inline-block;
   }
 
-  .book-totals-cost {
-    float: left;
+  .book-table-td-id,
+  .book-table-headers-id {
+    width: 10%;
+  }
+  .book-table-td-title,
+  .book-table-headers-title {
+    width: 30%;
+  }
+  .book-table-td-cost {
+    width: 30%;
+  }
+  .book-table-td-quantity,
+  .book-table-headers-quantity {
+    width: 20%;
   }
 
-  .book-totals-quantity {
+  .book-table-headers-cost {
+    width: 24%;
+  }
+
+  .book-table-button {
+    float: initial;
+    position: initial;
+    bottom: 0;
+  }
+}
+
+.book-table-button {
+  padding: 8px 14px;
+  background: $remove-button-bg;
+  color: $white;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+
+  @media screen and (max-width: $desktop-width - 1px) {
+    position: relative;
+    bottom: 40px;
     float: right;
   }
 }
 
-.headers-text,
-.totals-text {
-  font-family: "Lato", sans-serif;
+.book-totals {
+  position: absolute;
+  width: 65%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding: 9px 45px;
+  border-radius: 3px;
+  background: black;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.book-totals-cost,
+.book-totals-quantity {
+  display: inline-block;
+}
+
+.book-totals-cost {
+  width: 50%;
+}
+
+.book-totals-quantity {
+  text-align: right;
+  width: 43%;
+}
+
+@media screen and (min-width: $desktop-width) {
+  .book-totals {
+    max-width: 550px;
+    padding: 9px 70px;
+  }
+
+  .book-totals-cost {
+    width: 43%;
+    text-align: right;
+  }
+
+  .book-totals-quantity {
+    width: 30.5%;
+    text-align: right;
+  }
 }
 
 .mobile-only {
@@ -188,11 +280,13 @@
 }
 
 .desktop-only {
-  display: none;
-
-  @media screen and (min-width: $desktop-width) {
-    display: initial;
+  @media screen and (max-width: $desktop-width - 1px) {
+    display: none;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 // CSS RESET
